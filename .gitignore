@@ -1,0 +1,15 @@
+# node modules
+node_modules/
+# build output
+dist/
+# logs
+logs/
+# dependency directories
+jspm_packages/
+# coverage directory used by tools like istanbul
+coverage/
+# nyc test coverage
+.nyc_output/
+#env files
+.env
+/src/generated/prisma

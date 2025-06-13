@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Enums
+enum Role {
+  ADMIN
+  EMPLOYEE
+}
+
+// User model for admin and employee users
+model User {
+  id                          Int       @id @default(autoincrement())
+  name                        String
+  email                       String    @unique 
+  phoneNumber                 String    @unique
+  password                    String
+  otp                         String?
+  otpExpiresAt                DateTime?
+  otpVerified                 Boolean   @default(false)
+  isActive                    Boolean   @default(true)
+  refreshToken                String?
+  refreshTokenExpiresAt       DateTime?
+  lastLogin                   DateTime?
+
+  profilePicture              String?
+  address                     String?
+  city                        String?
+  pinCode                     String?
+  state                       String?
+  role                        Role      @default(EMPLOYEE)  
+
+  employees                   User[]    @relation("AdminEmployees") 
+  admin                       User?     @relation("AdminEmployees", fields: [adminId], references: [id])
+  adminId                     Int?      
+
+  createdAt                   DateTime  @default(now())
+  updatedAt                   DateTime  @updatedAt
+}
