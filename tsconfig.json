@@ -10,9 +10,26 @@
     "skipLibCheck": true,
     "strict": true,
     "noImplicitAny": true,
-    "noEmit": true,
-    "allowImportingTsExtensions": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
     "resolveJsonModule": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths" : {
+      "@/*": ["src/*"],
+      "controllers/*": ["src/controllers/*"],
+      "services/*": ["src/services/*"],
+      "utils/*": ["src/utils/*"],
+      "configs/*": ["src/configs/*"],
+      "middlewares/*": ["src/middlewares/*"],
+      "models/*": ["src/models/*"],
+      "routes/*": ["src/routes/*"],
+      "schemas/*": ["src/schemas/*"],
+      "types/*": ["src/types/*"]
+    }
   },
-  "include": ["src"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
+
+// End of file: package.json

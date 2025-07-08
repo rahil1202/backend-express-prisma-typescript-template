@@ -10,9 +10,9 @@ import {
   resetPassword,
   refreshAccessToken,
   refreshToken,
-} from '../controllers/authController.ts';
-import { authRateLimiter } from '../middlewares/rateLimiter.ts';
-import { validateRequest } from '../middlewares/validateRequest.ts';
+} from '@/controllers/authController';
+import { authRateLimiter } from '@/middlewares/rateLimiter';
+import { validateRequest } from '@/middlewares/validateRequest';
 import {
   signupSchema,
   loginSchema,
@@ -22,7 +22,7 @@ import {
   resendForgotPasswordOtpSchema,
   resetPasswordSchema,
   refreshTokenSchema,
-} from '../schemas/authSchema.ts';
+} from '@/schemas/authSchema';
 
 const router = Router();
 

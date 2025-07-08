@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 
-import { envConfig } from './env.ts';
+import { envConfig } from './env';
 
 const prisma = new PrismaClient({
   datasources: {

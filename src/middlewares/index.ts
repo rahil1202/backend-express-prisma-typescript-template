@@ -6,10 +6,10 @@ import helmet from 'helmet';
 import hpp from 'hpp';
 import morgan from 'morgan';
 
-import { corsConfig } from '../configs/cors.ts';
-import { cspDirectives } from '../configs/csp.ts';
+import { corsConfig } from '@/configs/cors';
+import { cspDirectives } from '@/configs/csp';
 
-import { rateLimiter } from './rateLimiter.ts';
+import { rateLimiter } from './rateLimiter';
 
 export const applyMiddleware = (app: Express): void => {
   app.use(cors(corsConfig));

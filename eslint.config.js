@@ -13,6 +13,7 @@ export default [
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
   {
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
@@ -43,6 +44,20 @@ export default [
       security: securityPlugin,
       'eslint-comments': eslintCommentsPlugin,
       'unused-imports': unusedImportsPlugin,
+    },
+    settings: {
+      'import/parsers': {
+        '@typescript-eslint/parser': ['.ts', '.tsx'],
+      },
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+          project: './tsconfig.json',
+        },
+        node: {
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        },
+      },
     },
     rules: {
       'unused-imports/no-unused-imports': 'error',

@@ -1,9 +1,8 @@
-// middleware to verify token, role and authenticate user
 import type { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 
-import { prisma } from '../../configs/db.ts';
-import { envConfig } from '../../configs/env.ts';
+import { prisma } from '@/configs/db';
+import { envConfig } from '@/configs/env';
 
 declare module 'express' {
   interface Request {

@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-import { envConfig } from '../configs/env.ts';
+import { envConfig } from '@/configs/env';
 
 const { ACCESS_SECRET_KEY, REFRESH_SECRET_KEY } = envConfig;
 export interface AccessTokenPayload {

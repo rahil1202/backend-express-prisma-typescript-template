@@ -6,8 +6,6 @@ export const signupSchema: AnyZodObject = z.object({
   phoneNumber: z.string().regex(/^[6-9]\d{9}$/, 'Invalid phone number'),
   password: z.string().min(6, 'Password must be at least 6 characters'),
   role: z.enum(['ADMIN', 'EMPLOYEE']).default('EMPLOYEE'),
-  store: z.string().min(4, 'Store name is required').optional(),
-  storeId: z.number().int().positive().optional(),
 });
 
 export const confirmRegistrationSchema: AnyZodObject = z.object({

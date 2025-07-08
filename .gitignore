@@ -1,7 +1,5 @@
 # node modules
 node_modules/
-# build output
-dist/
 # logs
 logs/
 # dependency directories
@@ -13,3 +11,5 @@ coverage/
 #env files
 .env
 /src/generated/prisma
+# output from bundlers
+dist/

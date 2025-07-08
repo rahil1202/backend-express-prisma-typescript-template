@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 
-import { envConfig } from '../configs/env.ts';
+import { envConfig } from '@/configs/env';
 
 const sendEmail = async (email: string, subject: string, htmlContent: string): Promise<void> => {
   const { EMAIL_HOST, EMAIL_PORT, EMAIL_USERNAME, EMAIL_PASSWORD } = envConfig;

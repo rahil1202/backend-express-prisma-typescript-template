@@ -1,21 +1,17 @@
 import bcrypt from 'bcryptjs';
 import type { Request, Response } from 'express';
 
-import { prisma } from '../configs/db.ts';
+import { prisma } from '@/configs/db';
 import {
   sendRegistrationOtpEmail,
   sendRegistrationSuccessEmail,
   sendResetPasswordOtpEmail,
   sendResetPasswordSuccessEmail,
-} from '../services/emailService.ts';
-import {
-  generateAccessToken,
-  generateRefreshToken,
-  verifyRefreshToken,
-} from '../utils/tokenUtils.ts';
+} from '@/services/emailService';
+import { generateAccessToken, generateRefreshToken, verifyRefreshToken } from '@/utils/tokenUtils';
 
 export const signup = async (req: Request, res: Response): Promise<void> => {
-  const { name, email, phoneNumber, password, role, storeId } = req.body;
+  const { name, email, phoneNumber, password, role } = req.body;
 
   try {
     const existingUser = await prisma.user.findFirst({
@@ -44,7 +40,6 @@ export const signup = async (req: Request, res: Response): Promise<void> => {
         otpVerified: false,
         isActive: false,
         role: role || 'EMPLOYEE',
-        storeId: storeId || undefined,
       },
     });
 
