@@ -1,8 +1,4 @@
-Here’s a professional and visually appealing `README.md` for your project using Markdown with icons and clean formatting:
 
----
-
-````markdown
 # 🚀 Backend Express + Prisma + TypeScript Template
 
 A **production-ready** and **developer-friendly** startup template for building scalable Express.js backend applications using **TypeScript**, **Prisma ORM**, **Zod validation**, and **security tools** like **Helmet**, **Rate Limiter**, and **HPP**.
@@ -49,7 +45,6 @@ npx prisma migrate dev --name init
 npm run dev      # Dev mode with nodemon
 npm run dev:tsx  # Fast dev mode using TSX
 ```
-````
 
 ---
 
